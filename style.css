@@ -1920,6 +1920,19 @@ ul li a:hover {
 h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin: 10px 0; }
 .price-box { font-size: 32px; font-weight: bold; margin: 20px 0; }
 
+.pre-phase{
+  font-size: 20px;
+  line-height: 27.5px;
+  padding-bottom: 20px;
+}
+
+.post-phase{
+   font-size: 17px;
+  line-height: 27.5px;
+  padding-bottom: 20px;
+  text-align: justify;
+}
+
 .feature-pills span {
     display: inline-flex;
     padding: 4px 15px;
@@ -1931,7 +1944,7 @@ h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin: 10px 0; }
     color: #8a6d3b;
 }
 
-.certificaton{
+.certificaton span{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -1980,12 +1993,7 @@ h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin: 10px 0; }
 .nutrition-table th, .nutrition-table td { padding: 15px 25px; text-align: left; border-bottom: 1px solid #eee; }
 .nutrition-table th { background: #f8f1e7; color: #8a6d3b; }
 
-/* Responsive Fix */
-@media (max-width: 850px) {
-    .product-main { flex-direction: column; }
-    .product-details { text-align: center; }
-    .buy-buttons { justify-content: center; }
-}
+
 
 
 
@@ -2280,6 +2288,21 @@ h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin: 10px 0; }
     gap: 10px;
     text-align: center;
   }
+
+
+
+
+
+
+
+
+
+
+/* Sub-section 1 product.html */
+
+    .product-main { flex-direction: column; }
+    .product-details { text-align: center; }
+    .buy-buttons { justify-content: center; }
 
 
 }
