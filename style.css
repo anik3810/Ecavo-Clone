@@ -981,6 +981,7 @@ h1 {
 }
 
 
+
 /* Section 8 */
 
 .made-with-nandi {
@@ -1004,7 +1005,7 @@ h1 {
   letter-spacing: 1.2px;
 }
 
-.title {
+.title_8 {
   font-family: 'Playfair Display';
   color: #FFFDF7;
   margin: 0 0 16px 0;
@@ -1013,7 +1014,7 @@ h1 {
 
 }
 
-.description {
+.description_8 {
   color: #999;
   font-size: 17px;
   line-height: 27.2px;
@@ -1022,27 +1023,22 @@ h1 {
 }
 
 .recipe-slider {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: flex;
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
   overflow-x: auto;
-  /* Enables horizontal scroll */
+  overflow-y: hidden;        /* Prevents vertical scrolling */
+  white-space: nowrap;       /* Ensures content stays on one line */
+  gap: 10px; 
   scroll-snap-type: x mandatory;
-  /* Makes scrolling "snap" to cards */
   -webkit-overflow-scrolling: touch;
-}
-
-.recipe-slider::-webkit-scrollbar {
-  display: none;
-  /*Hides default scrollbar for Chrome/Safari*/
+ 
 }
 
 .recipe-card2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 0 0 240px;
+  margin: 8px 0 24px 0;
   align-items: center;
   min-width: 240px;
   background: #251e18;
@@ -1051,6 +1047,20 @@ h1 {
   text-align: left;
   flex-shrink: 0;
   scroll-snap-align: start;
+}
+
+.recipe-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.recipe-slider::-webkit-scrollbar-track {
+  background: #333;
+  border-radius: 10px;
+}
+
+.recipe-slider::-webkit-scrollbar-thumb {
+  background: #c5a059;      /* Using your gold color */
+  border-radius: 10px;
 }
 
 .img-container {
@@ -1079,29 +1089,7 @@ h1 {
   margin: 0;
 }
 
-/* Progress Bar Styling */
-.slider-controls {
-  padding: 40px 40px 20px;
-}
 
-.progress-bar {
-  height: 3px;
-  background: #333;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.progress-fill {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 40%;
-  /* Adjust this to show scroll progress */
-  background: #c5a059;
-}
 
 .view-all {
   margin-top: 40px;
@@ -1150,7 +1138,7 @@ h1 {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
   max-width: 1100px;
   margin: 40px auto;
@@ -1208,6 +1196,7 @@ h1 {
 .product-info h3 {
   font-size: 20px;
   margin-bottom: 5px;
+  text-decoration: none;
 }
 
 .subtitle {
@@ -1273,11 +1262,14 @@ h1 {
   /* Subtle glow */
 }
 
+
+
 .p-footer strong {
   color: white;
   font-size: 12px;
   display: block;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
+  text-decoration: none;
 }
 
 
@@ -1332,6 +1324,7 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-size: 36px;
   margin-bottom: 20px;
+  color: white;
 }
 
 .cta-description {
@@ -1751,7 +1744,7 @@ details[open] summary .icon::before {
 
 .footer-container {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.5fr 1.5fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.5fr;
   gap: 40px;
   max-width: 1300px;
   margin: 0 auto;
@@ -1815,7 +1808,7 @@ ul li a:hover {
 }
 
 /* Badges */
-.badge {
+.badge1 {
   display: inline-block;
   background: #e8f5e9;
   color: #2e7d32;
@@ -1903,6 +1896,12 @@ ul li a:hover {
     font-family: sans-serif;
 }
 
+.breadcrumbs a{
+  color: black;
+  font-style: normal;
+  text-decoration: none;
+}
+
 .product-main {
     display: flex;
     gap: 50px;
@@ -1910,17 +1909,51 @@ ul li a:hover {
 }
 
 /* Gallery Styling */
-.product-gallery { flex: 1; }
-.main-img img { width: 100%; border-radius: 20px; background: white; padding: 20px; }
-.thumbnails { display: flex; gap: 10px; margin-top: 15px; justify-content: center; }
-.thumbnails img { width: 60px; height: 60px; border-radius: 8px; cursor: pointer; border: 1px solid #ddd; }
+.product-gallery {
+  flex: 1;
+}
+
+.main-img img {
+  width: 100%;
+  border-radius: 20px;
+  background: white;
+  padding: 20px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.thumbnails img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
 
 /* Details Styling */
-.product-details { flex: 1.2; text-align: left; }
-h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin: 10px 0; }
-.price-box { font-size: 32px; font-weight: bold; margin: 20px 0; }
+.product-details {
+  flex: 1.2;
+  text-align: left;
+}
 
-.pre-phase{
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  margin: 10px 0;
+}
+
+.price-box {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.pre-phase {
   font-size: 20px;
   line-height: 27.5px;
   padding-bottom: 20px;
@@ -1944,8 +1977,8 @@ h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin: 10px 0; }
     color: #8a6d3b;
 }
 
-.certificaton span{
-    display: flex;
+.certification span{
+    display: inline-flex;
     flex-wrap: wrap;
     gap: 20px;
     padding: 6px 15px;
@@ -1958,12 +1991,34 @@ h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin: 10px 0; }
 }
 
 /* Platform Buttons */
-.buy-buttons { display: flex; flex-wrap: wrap; gap: 10px; margin: 30px 0; }
-.btn { padding: 12px 25px; border-radius: 30px; text-decoration: none; color: white; font-weight: bold; font-size: 14px; }
-.blinkit { background: #ffda00; color: #000; }
-.zepto { background: #7d4cfc; }
-.instamart { background: #ff5200; }
+.buy-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0;
+}
 
+.btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.blinkit {
+  background: #ffda00;
+  color: #000;
+}
+
+.zepto {
+  background: #7d4cfc;
+}
+
+.instamart {
+  background: #ff5200;
+}
 
 /* storage-info button designing */
 
@@ -2196,7 +2251,7 @@ h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin: 10px 0; }
   }
 
   /* Section 8 */
-  .title {
+  .title_8 {
     font-size: 32px;
   }
 
